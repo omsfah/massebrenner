@@ -1,5 +1,7 @@
 #! /bin/bash
 
+STORAGEPATH="/home/olaf/Videos/tmp"
+
 echo "Automode initiated\n the program will move to right bin, fetch disk, place it in the cd-rom and do a copy with makemkv, once copy is completed the disk will be placed in the left bin"
 
 ./control.sh 7 #close optical
@@ -17,7 +19,7 @@ sleep 20
 ./control.sh 7 #close optical
 sleep 20
 echo "Starting MakemMKV"
-#makemkvcon -r mkv disc:0 all --minlength=300 /home/olaf/Videos/tmp &&
+#makemkvcon -r mkv disc:0 all --minlength=300 $STORAGEPATH &&
 echo "MakeMKV is completed"
 ./control.sh 6 #open optical
 ./control.sh 4 #move to optical
